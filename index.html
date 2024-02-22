@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CHECKER FOR REQ</title>
+</head>
+<body>
+    <button onclick="sendRequest()">Send Request</button>
+    
+    <script>
+        function generateRandomId() {
+            return Math.floor(Math.random() * 100000000);
+        }
+      
+        function sendRequest() {
+            var id = generateRandomId();
+            var url = "https://gen-khsaf.github.io/accessplusultra?id=" + id;
+
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data); // レスポンスをコンソールに出力
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
